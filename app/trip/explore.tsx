@@ -151,7 +151,7 @@ export default function Explore() {
 
         {listing.source && (
           <View className="mt-1 flex-row items-center">
-            <View className="h-8 w-8 items-center justify-center rounded-full bg-gray-100">
+            <View className="h-8 w-8 items-center justify-center rounded-full bg-white">
               <Text className="text-xs font-bold text-gray-400">
                 {listing.source.badge}
               </Text>
@@ -216,12 +216,12 @@ export default function Explore() {
   );
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-[#F5F3EE]">
       <TripTopTabs active="explore" />
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-4 pb-2">
-          <View className="mt-4 flex-row items-center rounded-2xl bg-gray-100 px-4 py-3.5">
+          <View className="mt-4 flex-row items-center rounded-2xl bg-white px-4 py-3.5">
             <Ionicons name="search" size={22} color="#4B5563" />
             <TextInput
               className="ml-3 flex-1 text-lg text-gray-900"
@@ -243,7 +243,7 @@ export default function Explore() {
             {SAMPLE_CATEGORIES.map((category) => (
               <Pressable
                 key={category.id}
-                className="w-[48.5%] flex-row items-center rounded-2xl bg-gray-100 px-4 py-4 active:opacity-70"
+                className="w-[48.5%] flex-row items-center rounded-2xl bg-white px-4 py-4 active:opacity-70"
               >
                 <Text className="text-2xl">{category.emoji}</Text>
                 <Text className="ml-3 text-lg text-gray-900">{category.label}</Text>

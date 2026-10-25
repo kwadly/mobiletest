@@ -25,7 +25,7 @@ export default function Profile() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-[#F5F3EE]">
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View
           className="overflow-hidden bg-[#e5e3df] px-3"
@@ -40,7 +40,7 @@ export default function Profile() {
               left: 0,
               width: "100%",
               height: "100%",
-              transform: [{ scale: 2.75 }],
+              transform: [{ scale: 3.1 }],
             }}
           />
 
@@ -53,13 +53,13 @@ export default function Profile() {
           </View>
         </View>
 
-        <View className="-mt-6 rounded-t-3xl bg-white px-3.5 pt-5">
+        <View className="-mt-6 rounded-t-3xl bg-[#F5F3EE] px-3.5 pt-5">
           <View className="flex-row items-center">
             <View>
               <View className="h-12 w-12 items-center justify-center rounded-full bg-gray-200">
                 <Ionicons name="person" size={26} color="#9CA3AF" />
               </View>
-              <View className="absolute -bottom-1 -right-1 h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-gray-100">
+              <View className="absolute -bottom-1 -right-1 h-6 w-6 items-center justify-center rounded-full border-2 border-[#F5F3EE] bg-gray-100">
                 <Ionicons name="pencil" size={11} color="#374151" />
               </View>
             </View>

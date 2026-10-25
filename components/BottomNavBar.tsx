@@ -15,7 +15,7 @@ export default function BottomNavBar({ active }: { active: Tab }) {
 
   return (
     <View
-      className="flex-row items-center justify-around border-t border-gray-200 bg-white pt-2"
+      className="flex-row items-center justify-around border-t border-gray-200 bg-[#F5F3EE] pt-2"
       style={{ paddingBottom: Math.max(insets.bottom, 8) }}
     >
       <Pressable className="p-2" onPress={() => router.navigate("/")}>

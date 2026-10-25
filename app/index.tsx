@@ -3,7 +3,7 @@ import BottomNavBar from "../components/BottomNavBar";
 
 export default function Index() {
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-[#F5F3EE]">
       <View className="flex-1 items-center justify-center">
         <Text>App is running</Text>
       </View>

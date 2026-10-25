@@ -39,7 +39,7 @@ export default function Itinerary() {
   const [showRecommended, setShowRecommended] = useState(true);
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-[#F5F3EE]">
       <TripTopTabs active="itinerary" />
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
@@ -55,7 +55,7 @@ export default function Itinerary() {
                   key={day.id}
                   onPress={() => setExpandedId(day.id)}
                   className={`rounded-full px-5 py-3 ${
-                    isActive ? "bg-[#2f3a28]" : "bg-gray-100"
+                    isActive ? "bg-[#2f3a28]" : "bg-white"
                   }`}
                 >
                   <Text
@@ -77,7 +77,7 @@ export default function Itinerary() {
 
           return (
             <View key={day.id}>
-              {index > 0 && <View className="h-3 bg-gray-100" />}
+              {index > 0 && <View className="h-3 bg-black/5" />}
 
               <View className="px-4 py-4">
                 <Pressable
@@ -133,14 +133,14 @@ export default function Itinerary() {
                     ))}
 
                     <View className="flex-row items-center">
-                      <Pressable className="flex-1 flex-row items-center rounded-2xl bg-gray-100 px-4 py-3.5 active:opacity-70">
+                      <Pressable className="flex-1 flex-row items-center rounded-2xl bg-white px-4 py-3.5 active:opacity-70">
                         <Ionicons name="location" size={22} color="#6B7280" />
                         <Text className="ml-3 text-lg text-gray-500">Add a place</Text>
                       </Pressable>
-                      <Pressable className="ml-3 h-12 w-12 items-center justify-center rounded-full bg-gray-100 active:opacity-70">
+                      <Pressable className="ml-3 h-12 w-12 items-center justify-center rounded-full bg-white active:opacity-70">
                         <MaterialCommunityIcons name="note-outline" size={22} color="#111827" />
                       </Pressable>
-                      <Pressable className="ml-3 h-12 w-12 items-center justify-center rounded-full bg-gray-100 active:opacity-70">
+                      <Pressable className="ml-3 h-12 w-12 items-center justify-center rounded-full bg-white active:opacity-70">
                         <MaterialCommunityIcons name="format-list-checks" size={22} color="#111827" />
                       </Pressable>
                     </View>
@@ -149,7 +149,7 @@ export default function Itinerary() {
                       className="mt-6 flex-row items-center"
                       onPress={() => setShowRecommended(!showRecommended)}
                     >
-                      <View className="h-10 w-10 items-center justify-center rounded-full bg-gray-100">
+                      <View className="h-10 w-10 items-center justify-center rounded-full bg-white">
                         <Ionicons
                           name={showRecommended ? "chevron-down" : "chevron-forward"}
                           size={20}
@@ -184,7 +184,7 @@ export default function Itinerary() {
                                 </Text>
                               </View>
                               <View className="justify-center pr-3">
-                                <Pressable className="h-10 w-10 items-center justify-center rounded-full bg-gray-100 active:opacity-70">
+                                <Pressable className="h-10 w-10 items-center justify-center rounded-full bg-white active:opacity-70">
                                   <Ionicons name="add" size={22} color="#4B5563" />
                                 </Pressable>
                               </View>
