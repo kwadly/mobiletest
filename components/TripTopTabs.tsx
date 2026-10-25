@@ -13,19 +13,16 @@ const TABS: { key: TripTab; label: string; route?: Href }[] = [
   { key: "journal", label: "Journal" },
 ];
 
-const ORANGE = "#F4573F";
-
 export default function TripTopTabs({ active }: { active: TripTab }) {
   const router = useRouter();
   const insets = useSafeAreaInsets();
 
   return (
     <View className="bg-white" style={{ paddingTop: insets.top }}>
-      {/* Header: home button, title, share and more icons */}
       <View className="flex-row items-center px-4 py-3">
         <View className="w-20 items-start">
           <Pressable onPress={() => router.navigate("/profile")}>
-            <Ionicons name="home" size={26} color="#6B7280" />
+            <Ionicons name="arrow-back" size={24} color="#111827"/>
           </Pressable>
         </View>
         <Text className="flex-1 text-center text-lg font-bold text-gray-900">
@@ -46,13 +43,13 @@ export default function TripTopTabs({ active }: { active: TripTab }) {
               <Pressable
                 key={tab.key}
                 className={`px-4 py-3 border-b-2 ${
-                  isActive ? "border-[#F4573F]" : "border-transparent"
+                  isActive ? "border-[#2f3a28]" : "border-transparent"
                 }`}
                 onPress={() => tab.route && router.replace(tab.route)}
               >
                 <Text
                   className={`text-base font-semibold ${
-                    isActive ? "text-[#F4573F]" : "text-gray-500"
+                    isActive ? "text-[#2f3a28]" : "text-gray-500"
                   }`}
                 >
                   {tab.label}

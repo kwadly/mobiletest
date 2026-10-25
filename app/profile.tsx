@@ -13,8 +13,8 @@ const user = {
 
 const trip = {
   title: "Trip to New York City",
-  daysLeft: 15,
-  dates: "Oct 21 – Nov 6",
+  daysLeft: 7,
+  dates: "Oct 21 – Oct 27",
   placesCount: 0,
 };
 
@@ -129,9 +129,11 @@ export default function Profile() {
             className="mb-6 mt-6 flex-row active:opacity-80"
             onPress={() => router.push("/trip/itinerary")}
           >
-            <View className="h-20 w-20 items-center justify-center rounded-xl bg-gray-300">
-              <Ionicons name="image-outline" size={28} color="#6B7280" />
-            </View>
+            <Image
+              source={require("../assets/explore/new-york.jpg")}
+              resizeMode="cover"
+              style={{ width: 80, height: 80, borderRadius: 12 }}
+            />
 
             <View className="ml-4 flex-1">
               <View className="flex-row items-center justify-between">
@@ -149,10 +151,7 @@ export default function Profile() {
               <Text className="mt-2 text-lg text-gray-900">{trip.title}</Text>
 
               <View className="mt-1 flex-row items-center">
-                <View className="h-8 w-8 items-center justify-center rounded-full bg-gray-200">
-                  <Text className="text-xs font-bold text-gray-400">G</Text>
-                </View>
-                <Text className="ml-2 text-base text-gray-500">
+                <Text className="text-base text-gray-500">
                   {trip.dates} • {trip.placesCount === 0 ? "No places" : `${trip.placesCount} places`}
                 </Text>
               </View>
