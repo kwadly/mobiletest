@@ -22,9 +22,8 @@ export default function BottomNavBar({ active }: { active: Tab }) {
         <Ionicons name="home" size={26} color={color("home")} />
       </Pressable>
 
-      {/* Not wired up yet: no screen exists for this button */}
-      <Pressable className="h-12 w-12 items-center justify-center rounded-full bg-[#F4573F]">
-        <Ionicons name="add" size={32} color="#FFFFFF" />
+      <Pressable className="h-12 w-12 items-center justify-center rounded-full bg-[#c1cb9c]">
+        <Ionicons name="add" size={32} color="#2f3a28" />
       </Pressable>
 
       <Pressable className="p-2" onPress={() => router.navigate("/profile")}>
