@@ -1,13 +1,5 @@
-import { View, Text } from "react-native";
-import BottomNavBar from "../components/BottomNavBar";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View className="flex-1 bg-[#F5F3EE]">
-      <View className="flex-1 items-center justify-center">
-        <Text>App is running</Text>
-      </View>
-      <BottomNavBar active="home" />
-    </View>
-  );
+  return <Redirect href="/home" />;
 }

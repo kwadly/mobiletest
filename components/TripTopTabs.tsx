@@ -9,7 +9,7 @@ const TABS: { key: TripTab; label: string; route?: Href }[] = [
   { key: "overview", label: "Overview" },
   { key: "itinerary", label: "Itinerary", route: "/trip/itinerary" },
   { key: "explore", label: "Explore", route: "/trip/explore" },
-  { key: "budget", label: "$" },
+  { key: "budget", label: "$", route: "/trip/budget" },
   { key: "journal", label: "Journal" },
 ];
 

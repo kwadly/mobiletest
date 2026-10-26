@@ -1,5 +1,6 @@
 import {View,Text,Pressable,ScrollView,TextInput,Image,ImageSourcePropType} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter, Href } from "expo-router";
 import TripTopTabs from "../../components/TripTopTabs";
 
 type PhotoCardItem = {
@@ -7,6 +8,7 @@ type PhotoCardItem = {
   title: string;
   subtitle?: string;
   image: ImageSourcePropType;
+  route?: Href;
 };
 
 type Listing = {
@@ -46,6 +48,7 @@ const SAMPLE_TOP_SEARCHES: PhotoCardItem[] = [
     id: "deli",
     title: "Deli",
     image: require("../../assets/explore/bagel.jpg"),
+    route: "/trip/guide",
   },
 ];
 
@@ -131,6 +134,8 @@ const SAMPLE_MORE_LISTINGS: Listing[] = [
 ];
 
 export default function Explore() {
+  const router = useRouter();
+
   const renderListing = (listing: Listing) => (
     <Pressable
       key={listing.id}
@@ -194,6 +199,7 @@ export default function Explore() {
         {items.map((item) => (
           <Pressable
             key={item.id}
+            onPress={() => item.route && router.push(item.route)}
             className="h-40 w-32 overflow-hidden rounded-2xl bg-gray-200 active:opacity-80"
           >
             <Image

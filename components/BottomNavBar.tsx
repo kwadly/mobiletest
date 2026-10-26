@@ -18,11 +18,14 @@ export default function BottomNavBar({ active }: { active: Tab }) {
       className="flex-row items-center justify-around border-t border-gray-200 bg-[#F5F3EE] pt-2"
       style={{ paddingBottom: Math.max(insets.bottom, 8) }}
     >
-      <Pressable className="p-2" onPress={() => router.navigate("/")}>
+      <Pressable className="p-2" onPress={() => router.navigate("/home")}>
         <Ionicons name="home" size={26} color={color("home")} />
       </Pressable>
 
-      <Pressable className="h-12 w-12 items-center justify-center rounded-full bg-[#c1cb9c]">
+      <Pressable
+        className="h-12 w-12 items-center justify-center rounded-full bg-[#c1cb9c]"
+        onPress={() => router.navigate("/destinations")}
+      >
         <Ionicons name="add" size={32} color="#2f3a28" />
       </Pressable>
 
