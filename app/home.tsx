@@ -1,6 +1,6 @@
 import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import BottomNavBar from '@/components/BottomNavBar';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import TripwiseLogo from '@/components/tripwise-logo';
 
 const routes = [
@@ -47,8 +47,8 @@ const guides = [
     title: 'Cairo by neighborhood',
     place: 'Cairo, Egypt',
     detail: 'History · 3 days',
-    author: 'Mariam Hassan',
-    handle: '@mariamwanders',
+    author: 'Madison Brdaric',
+    handle: '@meb520',
     initials: 'MH',
     saves: '2.4k saves',
     image: 'https://images.unsplash.com/photo-1594808846629-d8db69293d63?auto=format&fit=crop&w=900&q=85',
@@ -153,7 +153,7 @@ export default function HomeScreen() {
           <View className="mb-4 flex-row items-center justify-between">
             <TripwiseLogo />
             <View className="flex-row items-center gap-3">
-              <Link href="/destinations" asChild>
+              <Link href={'/place-search' as any} asChild>
                 <Pressable accessibilityRole="button" accessibilityLabel="Search destinations" className="h-10 w-10 items-center justify-center rounded-full bg-white">
                   <Text className="text-[22px] text-[#2f3a28]">⌕</Text>
                 </Pressable>
@@ -221,30 +221,37 @@ export default function HomeScreen() {
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingRight: 8 }}>
             {guides.map((guide) => (
-              <Link href={'/destinations' as any} asChild key={guide.title}>
-                <Pressable accessibilityRole="button" accessibilityLabel={`${guide.title}, by ${guide.author}`} className="mr-3 w-[242px] overflow-hidden rounded-[20px] bg-white">
-                  <View className="relative">
-                    <Image source={{ uri: guide.image }} className="h-[142px] w-full" resizeMode="cover" />
-                    <View className="absolute bottom-2.5 left-2.5 rounded-full bg-white/95 px-2.5 py-1">
-                      <Text className="text-[10px] font-bold text-[#2f3a28]">{guide.saves}</Text>
-                    </View>
+              <Pressable
+                key={guide.title}
+                onPress={() => router.push('/destinations' as any)}
+                accessibilityRole="button"
+                accessibilityLabel={`${guide.title}, by ${guide.author}`}
+                className="mr-3 w-[242px] overflow-hidden rounded-[20px] bg-white"
+              >
+                <View className="relative">
+                  <Image source={{ uri: guide.image }} className="h-[142px] w-full" resizeMode="cover" />
+                  <View className="absolute bottom-2.5 left-2.5 rounded-full bg-white/95 px-2.5 py-1">
+                    <Text className="text-[10px] font-bold text-[#2f3a28]">{guide.saves}</Text>
                   </View>
-                  <View className="p-3.5">
-                    <Text numberOfLines={1} className="text-[14px] font-bold text-[#2f3a28]">{guide.title}</Text>
-                    <Text className="mt-1 text-[12px] text-[#2f3a28]/65">{guide.place} · {guide.detail}</Text>
-                    <View className="mt-3 flex-row items-center border-t border-[#2f3a28]/10 pt-3">
-                      <View className="mr-2 h-8 w-8 items-center justify-center rounded-full bg-[#dce2c9]">
-                        <Text className="text-[10px] font-bold text-[#2f3a28]">{guide.initials}</Text>
-                      </View>
-                      <View className="flex-1">
-                        <Text numberOfLines={1} className="text-[11px] font-bold text-[#2f3a28]">{guide.author}</Text>
-                        <Text numberOfLines={1} className="text-[10px] text-[#2f3a28]/55">{guide.handle}</Text>
-                      </View>
-                      <Text className="text-[16px] text-[#65714d]">↗</Text>
+                </View>
+                <View className="p-3.5">
+                  <Text numberOfLines={1} className="text-[14px] font-bold text-[#2f3a28]">{guide.title}</Text>
+                  <Text className="mt-1 text-[12px] text-[#2f3a28]/65">{guide.place} · {guide.detail}</Text>
+                  <Pressable
+                    onPress={() => router.push('/user_profile' as any)}
+                    className="mt-3 flex-row items-center border-t border-[#2f3a28]/10 pt-3"
+                  >
+                    <View className="mr-2 h-8 w-8 items-center justify-center rounded-full bg-[#dce2c9]">
+                      <Text className="text-[10px] font-bold text-[#2f3a28]">{guide.initials}</Text>
                     </View>
-                  </View>
-                </Pressable>
-              </Link>
+                    <View className="flex-1">
+                      <Text numberOfLines={1} className="text-[11px] font-bold text-[#2f3a28]">{guide.author}</Text>
+                      <Text numberOfLines={1} className="text-[10px] text-[#2f3a28]/55">{guide.handle}</Text>
+                    </View>
+                    <Text className="text-[16px] text-[#65714d]">↗</Text>
+                  </Pressable>
+                </View>
+              </Pressable>
             ))}
           </ScrollView>
         </View>
